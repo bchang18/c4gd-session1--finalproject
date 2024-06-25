@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float maxJumps = 1; // how many total jumps the player can do
     float jumpsLeft = 0; // jumps left is a counter of the jumps a player has left
 
+
     Animator anim;
 
     public float gameOverHeight = -4f;
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             nextVelocityY = jumpSpeed;
             jumpsLeft -= 1; //decrement jump count  2 -> 1 -> 0
+            AudioManager.singleton.PlaySFX(AudioManager.singleton.jumpSFX, 1);
         }
 
         if (transform.position.y < gameOverHeight)
@@ -73,8 +75,15 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("XSpeed", Mathf.Abs(nextVelocityX));
         anim.SetFloat("YSpeed", nextVelocityY);
         anim.SetBool("Grounded", CheckGrounded());
-        anim.SetBool("Attacker", KeyQ());
-
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            anim.SetTrigger("Attacker");
+            AudioManager.singleton.PlaySFX(AudioManager.singleton.attackSFX, 1); 
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetTrigger("Charge");
+        }
 
         // SET our velocity
         rb2d.velocity = new Vector2(nextVelocityX, nextVelocityY);
@@ -83,5 +92,8 @@ public class PlayerController : MonoBehaviour
         // RIGIDBODY DOESNT NEED TIME DELTA TIME BECAUSE UNITY IS AUTOMATICALLY DOING THAT
 
         // TRANSFORM TRANSLATE -> We are moving a distance in a frame.
+
+
     }
+
 }
