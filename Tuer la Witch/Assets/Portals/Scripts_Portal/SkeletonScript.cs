@@ -79,9 +79,11 @@ public class SkeletonScript : MonoBehaviour
         if (playerController.health <= 0 || !anim.GetBool("isAlive")) {
             return;
         }
-        float moveDirection = player.transform.position.x - transform.position.x;
+        float moveDirection_x = player.transform.position.x - transform.position.x;
+        float moveDirection_y = player.transform.position.y - transform.position.y;
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        float xVelocity = moveDirection * SkeletonSpeed;
+        float xVelocity = moveDirection_x * SkeletonSpeed;
+        float yVelocity = moveDirection_y * SkeletonSpeed;
         /*if (!attacked)
         {
             if (playerDetection.triggered)
@@ -90,7 +92,7 @@ public class SkeletonScript : MonoBehaviour
                 print("attack opened!");
             }
         }*/
-        if (moveDirection > 0)
+        if (moveDirection_x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
@@ -98,7 +100,7 @@ public class SkeletonScript : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        SB.velocity = new Vector2(xVelocity, 0);
+        SB.velocity = new Vector2(xVelocity, yVelocity);
         anim.SetBool("Attacked", playerDetection.triggered);
         anim.SetBool("xSpeedIsZero", (xVelocity == 0));
         anim.SetFloat("xSpeed", Mathf.Abs(xVelocity));

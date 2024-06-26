@@ -72,7 +72,6 @@ public class PlayerController_Portal : MonoBehaviour
         healthText.text = "Health: " + health;
         // Getting the inputs
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
         // initializing the speed for the next frame
         float xSpeed = horizontalInput * moveSpeed;
         float ySpeed = rb2d.velocity.y;
@@ -81,7 +80,7 @@ public class PlayerController_Portal : MonoBehaviour
             jumps = 1;
         }
         // if W is pressed, jump
-        if (verticalInput > 0 && jumps > 0) {
+        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0) {
             ySpeed = jumpSpeed;
             --jumps;
         }
