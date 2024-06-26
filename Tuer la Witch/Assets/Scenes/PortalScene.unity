@@ -256,7 +256,8 @@ MonoBehaviour:
   jumpSpeed: 5
   groundCheckRadius: 0.1
   min_bound: -8.38
-  jumps: 1
+  jumps: 2
+  max_jumps: 2
   cnt: 0
   inAttack: 0
   inAttackMoveRight: 0

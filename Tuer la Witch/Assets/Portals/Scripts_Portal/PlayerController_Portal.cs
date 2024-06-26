@@ -14,7 +14,8 @@ public class PlayerController_Portal : MonoBehaviour
     public TextMeshProUGUI enemyText;
     public int health = 3;
     public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -8.38f;
-    public int jumps = 1;
+    public int jumps = 2;
+    public int max_jumps = 2;
     public int cnt = 0;
     public bool inAttack = false;
     public bool inAttackMoveRight = false;
@@ -81,7 +82,7 @@ public class PlayerController_Portal : MonoBehaviour
         float ySpeed = rb2d.velocity.y;
         // if in contant with the ground, restore jumps
         if (ContactWithGround()) {
-            jumps = 1;
+            jumps = max_jumps;
         }
         // if W is pressed, jump
         if (Input.GetKeyDown(KeyCode.Space) && jumps > 0 && !inAttack) {
