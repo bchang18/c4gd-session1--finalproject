@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/Scenes/Interface.unity
-    guid: 5c4d181b9066d463690de7bb341d6506
   - enabled: 1
     path: Assets/Scenes/Interface.unity
     guid: 649aa7a0e66a24e18b9fe438b061d47d
@@ -18,7 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 9004246d1a90547a6b09faa03c9ff19d
   - enabled: 1
-    path: Assets/Scenes/ForestBackUp.unity
+    path: Assets/Scenes/Forest.unity
+    guid: 9da6b6a0a0648924ebc2ecfdccb91d5f
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
     guid: 20aa337ee13834191a84c9997d2c0529
   - enabled: 1
     path: Assets/Scenes/PortalScene.unity
