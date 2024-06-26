@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerVillage : MonoBehaviour
 {
     float horizontalInput;
     public float moveSpeed = 10f;
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-   
+
         // SET ANIMATION PARAMETERS
         anim.SetFloat("XSpeed", Mathf.Abs(nextVelocityX));
         anim.SetFloat("YSpeed", nextVelocityY);
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             anim.SetTrigger("Attacker");
-            AudioManager.singleton.PlaySFX(AudioManager.singleton.attackSFX, 1); 
+            AudioManager.singleton.PlaySFX(AudioManager.singleton.attackSFX, 1);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
