@@ -6,7 +6,8 @@ public class SpawnMonsterScript : MonoBehaviour
 {
     public GameObject skeletonPrefab;
     public PlayerController_Portal player;
-    public float spawnRate = 12f;
+    public float spawnRate = 8f;
+    public int enemiesLeft = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,10 @@ public class SpawnMonsterScript : MonoBehaviour
     }
     IEnumerator spawnMonsters()
     {
-        while (player.gameContinues)
+        while (player.gameContinues && enemiesLeft > 0)
         {
             print("spawned!");
+            --enemiesLeft;
             Instantiate(skeletonPrefab, new Vector2(transform.position.x, skeletonPrefab.transform.position.y), skeletonPrefab.transform.rotation);
             yield return new WaitForSeconds(spawnRate);
         }

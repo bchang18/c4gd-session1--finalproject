@@ -111,7 +111,7 @@ MonoBehaviour:
   playerDetection: {fileID: 1440488251529818729}
   playerController: {fileID: 0}
   attacked: 0
-  enemyHealth: 1
+  enemyHealth: 2
   difficulty: 5
 --- !u!50 &1440488250867678688
 Rigidbody2D:
