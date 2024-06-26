@@ -50,14 +50,6 @@ public class PlayerController_Portal : MonoBehaviour
     public void attackFinish()
     {
         inAttack = false;
-        if (inAttackMoveRight)
-        {
-            transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
-        }
-        else
-        {
-            transform.position = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
-        }
     }
     public void checkEnemy()
     {
