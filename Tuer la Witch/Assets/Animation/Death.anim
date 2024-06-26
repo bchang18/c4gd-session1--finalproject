@@ -21,7 +21,6 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 935107792, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-<<<<<<< HEAD
     - time: 0.1
       value: {fileID: 468496093, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
     - time: 0.2
@@ -43,29 +42,6 @@ AnimationClip:
     - time: 0.98333335
       value: {fileID: 805838910, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
     - time: 1.0833334
-=======
-    - time: 0.083333336
-      value: {fileID: 468496093, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.18333334
-      value: {fileID: 1234523725, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.26666668
-      value: {fileID: -1107182135, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.36666667
-      value: {fileID: 1772644507, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.45
-      value: {fileID: 1793949838, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.55
-      value: {fileID: -1024152182, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.6333333
-      value: {fileID: 1339126839, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.73333335
-      value: {fileID: 673339124, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.81666666
-      value: {fileID: -1438705688, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 0.9166667
-      value: {fileID: 805838910, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
-    - time: 1
->>>>>>> Portal
       value: {fileID: 1533293275, guid: 7f1c16e675f2e4a54954b86a4db5b2fa, type: 3}
     attribute: m_Sprite
     path: 
@@ -103,11 +79,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<< HEAD
     m_StopTime: 1.1
-=======
-    m_StopTime: 1.0166667
->>>>>>> Portal
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -126,22 +98,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-<<<<<<< HEAD
   m_Events: []
-=======
-  m_Events:
-  - time: 0
-    functionName: dying
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1
-    functionName: destroyPlayer
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
->>>>>>> Portal
