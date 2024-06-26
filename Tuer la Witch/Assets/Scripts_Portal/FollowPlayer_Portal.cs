@@ -20,7 +20,7 @@ public class FollowPlayer_Portal : MonoBehaviour
         if (player == null) {
             return;
         }
-        if (playerScript.inAttack)
+        /*if (playerScript.inAttack)
         {
             if (playerScript.inAttackMoveRight)
             {
@@ -31,8 +31,8 @@ public class FollowPlayer_Portal : MonoBehaviour
                 transform.position = new Vector3(transform.position.x + attackConst, transform.position.y, transform.position.z);
             }
         }
-        else { 
-             transform.position = new Vector3(Mathf.Max(0, player.transform.position.x), transform.position.y, transform.position.z);
-        }
+        else { */
+        transform.position = new Vector3(Mathf.Max(0, player.transform.position.x), transform.position.y, transform.position.z);
+        //}
     }
 }
