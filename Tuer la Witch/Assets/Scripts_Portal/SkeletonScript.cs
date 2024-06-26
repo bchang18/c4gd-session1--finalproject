@@ -14,7 +14,7 @@ public class SkeletonScript : MonoBehaviour
     public PlayerController_Portal playerController;
     public bool attacked = false;
     public int enemyHealth = 2;
-    public float difficulty = 5f;
+    public int difficulty = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class SkeletonScript : MonoBehaviour
         SB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerDetection = FindObjectOfType<SkeletonDetectionScript>();
+        StartCoroutine(shielding());
     }
     public void destroyEnemy()
     {
@@ -30,17 +31,9 @@ public class SkeletonScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void receiveDamage(){
-        float value = Random.Range(0f, 10f);
-        anim = gameObject.GetComponent<Animator>();
         anim.SetBool("Damaged", true);
-        if (value <= difficulty)
+        if (!anim.GetBool("Shielded"))
         {
-            // shield
-            anim.SetBool("Shielded", true);
-        }
-        else {
-            // take damage
-            anim.SetBool("Shielded", false);
             --enemyHealth;
             if (enemyHealth == 0) {
                 anim.SetBool("isAlive", false);
@@ -69,6 +62,15 @@ public class SkeletonScript : MonoBehaviour
                 SB.velocity = new Vector2(0, 0);
                 //Destroy(player);
             }
+        }
+    }
+    IEnumerator shielding()
+    {
+        while (playerController.gameContinues)
+        {
+            float nxtShield = Random.Range(0, difficulty);
+            yield return new WaitForSeconds(nxtShield);
+            anim.SetBool("Shielded", true);
         }
     }
     // Update is called once per frame
