@@ -28,7 +28,6 @@ public class SkeletonScript : MonoBehaviour
     public void destroyEnemy()
     {
         Destroy(gameObject);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void receiveDamage(){
         anim.SetBool("Damaged", true);
@@ -48,6 +47,9 @@ public class SkeletonScript : MonoBehaviour
     }
     public void checkPlayer()
     {
+        if (!anim.GetBool("PlayerIsAlive")) {
+            return;
+        }
         if (playerDetection.triggered) {
             playerController.health--;
             playerController.anim.SetBool("Damaged", true);
@@ -58,9 +60,13 @@ public class SkeletonScript : MonoBehaviour
                 playerController.gameContinues = false;
                 playerController.anim.SetBool("isAlive", false);
                 playerController.anim.SetBool("isDying", true);
-                anim.SetBool("PlayerIsAlive", false);
+                SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
+                foreach (SkeletonScript s in SSarray)
+                {
+                    s.anim.SetBool("PlayerIsAlive", false);
+                    s.SB.velocity = new Vector2(0, 0);
+                }
                 playerController.rb2d.velocity = new Vector2(0, 0);
-                SB.velocity = new Vector2(0, 0);
                 //Destroy(player);
             }
         }
@@ -77,7 +83,7 @@ public class SkeletonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerController.health <= 0 || !anim.GetBool("isAlive")) {
+        if (!anim.GetBool("PlayerIsAlive") || playerController.health <= 0 || !anim.GetBool("isAlive")) {
             return;
         }
         float moveDirection_x = player.transform.position.x - transform.position.x;

@@ -7,7 +7,7 @@ public class FollowPlayer_Portal : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public PlayerController_Portal playerScript;
-    public float attackConst = 2f / 60f;
+    public float cameraMinBound = -1.42f;
     public void Start()
     {
         player = FindObjectOfType<PlayerController_Portal>().gameObject;
@@ -20,19 +20,6 @@ public class FollowPlayer_Portal : MonoBehaviour
         if (player == null) {
             return;
         }
-        /*if (playerScript.inAttack)
-        {
-            if (playerScript.inAttackMoveRight)
-            {
-                transform.position = new Vector3(transform.position.x - attackConst, transform.position.y, transform.position.z);
-            }
-            else
-            {
-                transform.position = new Vector3(transform.position.x + attackConst, transform.position.y, transform.position.z);
-            }
-        }
-        else { */
-        transform.position = new Vector3(Mathf.Max(0, player.transform.position.x), transform.position.y, transform.position.z);
-        //}
+        transform.position = new Vector3(Mathf.Max(cameraMinBound, player.transform.position.x), transform.position.y, transform.position.z);
     }
 }

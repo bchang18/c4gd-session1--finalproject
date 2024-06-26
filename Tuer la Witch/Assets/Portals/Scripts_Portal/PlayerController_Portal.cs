@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 
@@ -25,6 +26,7 @@ public class PlayerController_Portal : MonoBehaviour
     public PlayerDetectionScript enemyDetection;
     public bool gameContinues = true;
     public int enemyCnt = 10;
+    public GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,9 +45,14 @@ public class PlayerController_Portal : MonoBehaviour
     public void dying() {
         anim.SetBool("isDying", true);
     }
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void destroyPlayer()
     {
         Destroy(gameObject);
+        gameOverScreen.SetActive(true);
     }
     public void attackFinish()
     {
@@ -98,7 +105,7 @@ public class PlayerController_Portal : MonoBehaviour
             inAttackMoveRight = (transform.localScale.x == 1);
         }
         if (inAttack) {
-            xSpeed = 0; ySpeed = 0;
+            xSpeed = 0;
         }
         // Set up animation variables
         anim.SetFloat("xSpeed", Mathf.Abs(xSpeed));
