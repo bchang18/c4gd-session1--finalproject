@@ -44,6 +44,18 @@ public class PlayerController_Portal : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public void attackFinish()
+    {
+        inAttack = false;
+        if (inAttackMoveRight)
+        {
+            transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
+        }
+    }
     public void checkEnemy()
     {
         if (enemyDetection.triggered)
@@ -88,24 +100,10 @@ public class PlayerController_Portal : MonoBehaviour
         {
             inAttack = true;
             inAttackMoveRight = (transform.localScale.x == 1);
-            ++cnt;
         }
-        if (inAttack)
-        {
-            ++cnt;
-            if (cnt == 60) {
-                cnt = 0;
-                inAttack = false;
-                if (inAttackMoveRight) { 
-                    transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
-                }
-                else
-                {
-                    transform.position = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z);
-                }
-            }
+        if (inAttack) {
+            xSpeed = 0; ySpeed = 0;
         }
-        
         // Set up animation variables
         anim.SetFloat("xSpeed", Mathf.Abs(xSpeed));
         anim.SetBool("xSpeedIsZero", (xSpeed == 0));
