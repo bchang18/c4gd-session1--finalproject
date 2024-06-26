@@ -11,6 +11,7 @@ public class PlayerController_Portal : MonoBehaviour
     public Transform groundPoint;
     public LayerMask groundMask;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI enemyText;
     public int health = 3;
     public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -8.38f;
     public int jumps = 1;
@@ -22,6 +23,7 @@ public class PlayerController_Portal : MonoBehaviour
     public Animator anim;
     public PlayerDetectionScript enemyDetection;
     public bool gameContinues = true;
+    public int enemyCnt = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,7 @@ public class PlayerController_Portal : MonoBehaviour
     {
         if (enemyDetection.triggered)
         {
+            SS = FindObjectOfType<SkeletonScript>();
             SS.receiveDamage();
         }
     }
@@ -70,6 +73,7 @@ public class PlayerController_Portal : MonoBehaviour
             return;
         }
         healthText.text = "Health: " + health;
+        enemyText.text = "Enemies Left: " + enemyCnt;
         // Getting the inputs
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
@@ -81,15 +85,15 @@ public class PlayerController_Portal : MonoBehaviour
             jumps = 1;
         }
         // if W is pressed, jump
-        if (verticalInput > 0 && jumps > 0) {
+        if (verticalInput > 0 && jumps > 0 &&!inAttack) {
             ySpeed = jumpSpeed;
             --jumps;
         }
         // if player wanted to move right, adjust the facing of the sprite
-        if (horizontalInput > 0) {
+        if (horizontalInput > 0 && !inAttack) {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if(horizontalInput < 0) {
+        else if(horizontalInput < 0 &&!inAttack) {
             transform.localScale = new Vector3(-1, 1, 1);
         }
         // player cannot move past boundary

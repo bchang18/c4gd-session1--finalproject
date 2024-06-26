@@ -28,7 +28,7 @@ public class SkeletonScript : MonoBehaviour
     public void destroyEnemy()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void receiveDamage(){
         anim.SetBool("Damaged", true);
@@ -36,6 +36,7 @@ public class SkeletonScript : MonoBehaviour
         {
             --enemyHealth;
             if (enemyHealth == 0) {
+                --playerController.enemyCnt;
                 anim.SetBool("isAlive", false);
                 SB.velocity = new Vector2(0, 0);
             }
