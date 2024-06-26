@@ -2,32 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public Transform groundPoint;
     public LayerMask groundMask;
-    public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -6.5f;
+    public TextMeshProUGUI healthText;
+    public int health = 3;
+    public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -8.38f;
     public int jumps = 1;
     public int cnt = 0;
     public bool inAttack = false;
     public bool inAttackMoveRight = false;
+    public SkeletonScript SS;
     public float attackConst = 2f / 60f;
-    Animator anim;
+    public Animator anim;
+    public PlayerDetectionScript enemyDetection;
+    public bool gameContinues = true;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        SS = FindObjectOfType<SkeletonScript>();
+        enemyDetection = FindObjectOfType<PlayerDetectionScript>();
     }
     public bool ContactWithGround()
     {
         return Physics2D.OverlapCircle(groundPoint.position, groundCheckRadius, groundMask);
     }
-
+    public void changeDamage() {
+        anim.SetBool("Damaged", false);
+    }
+    public void dying() {
+        anim.SetBool("isDying", true);
+    }
+    public void destroyPlayer()
+    {
+        Destroy(gameObject);
+    }
+    public void checkEnemy()
+    {
+        if (enemyDetection.triggered)
+        {
+            SS.receiveDamage();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        if (!anim.GetBool("isAlive")) {
+            return;
+        }
+        healthText.text = "Health: " + health;
         // Getting the inputs
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
@@ -53,7 +82,6 @@ public class PlayerController : MonoBehaviour
         // player cannot move past boundary
         if (transform.position.x < min_bound) {
             transform.position = new Vector3(min_bound, transform.position.y, transform.position.z);
-            xSpeed = 0;
         }
         if (Input.GetKeyDown(KeyCode.Q) && !inAttack)
         {
@@ -84,4 +112,5 @@ public class PlayerController : MonoBehaviour
         // set the velocity for the next frame
         rb2d.velocity = new Vector2(xSpeed, ySpeed);
     }
+    
 }

@@ -17,17 +17,18 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (player == null) {
+            return;
+        }
         if (playerScript.inAttack)
         {
             if (playerScript.inAttackMoveRight)
             {
                 transform.position = new Vector3(transform.position.x - attackConst, transform.position.y, transform.position.z);
-                print("decremented 2/60");
             }
             else
             {
                 transform.position = new Vector3(transform.position.x + attackConst, transform.position.y, transform.position.z);
-                print("incremented 2/60");
             }
         }
         else { 
