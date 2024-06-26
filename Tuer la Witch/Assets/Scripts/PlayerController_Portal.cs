@@ -4,7 +4,7 @@ using UnityEngine;
 
 using TMPro;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController_Portal : MonoBehaviour
 {
     // this is a test
     public Rigidbody2D rb2d;

@@ -11,14 +11,14 @@ public class SkeletonScript : MonoBehaviour
     public float SkeletonSpeed = 2f;
     public Animator anim;
     public SkeletonDetectionScript playerDetection;
-    public PlayerController playerController;
+    public PlayerController_Portal playerController;
     public bool attacked = false;
     public int enemyHealth = 2;
     public float difficulty = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindObjectOfType<PlayerController_Portal>();
         player = playerController.gameObject;
         SB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

@@ -5,12 +5,12 @@ using UnityEngine;
 public class SpawnMonsterScript : MonoBehaviour
 {
     public GameObject skeletonPrefab;
-    public PlayerController player;
+    public PlayerController_Portal player;
     public float spawnRate = 12f;
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<PlayerController_Portal>();
         StartCoroutine(spawnMonsters());
     }
     IEnumerator spawnMonsters()
