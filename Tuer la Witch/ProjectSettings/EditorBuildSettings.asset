@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Interface.unity
     guid: 5c4d181b9066d463690de7bb341d6506
   - enabled: 1
-    path: Assets/Settings_Portal/Scenes/Interface.unity
+    path: Assets/Scenes/Interface.unity
     guid: 649aa7a0e66a24e18b9fe438b061d47d
   - enabled: 1
-    path: Assets/Settings_Portal/Scenes/Village.unity
+    path: Assets/Scenes/Village.unity
     guid: 9004246d1a90547a6b09faa03c9ff19d
+  - enabled: 1
+    path: Assets/Scenes/ForestBackUp.unity
+    guid: 20aa337ee13834191a84c9997d2c0529
+  - enabled: 1
+    path: Assets/Scenes/PortalScene.unity
+    guid: 51042bf156fe3374999b2bb3a8a857c7
   m_configObjects: {}
