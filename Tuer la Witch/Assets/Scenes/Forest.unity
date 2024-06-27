@@ -942,7 +942,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1200,7 +1204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745717845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.01, y: 0.77, z: -0.7292284}
+  m_LocalPosition: {x: 88.35, y: -0.34, z: -0.7292284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2349,7 +2353,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2433,7 +2441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414054ea6b40d6c4e9e0ec63c6763e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2.5
   startingPoint: 0
   points:
   - {fileID: 745717846}
@@ -3233,7 +3241,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3548,7 +3560,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3903,7 +3919,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4483,7 +4503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815399651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.01, y: -0.39, z: -0.06340777}
+  m_LocalPosition: {x: 86.42, y: 1, z: -0.06340777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4548,7 +4568,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4695,7 +4719,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4808,7 +4836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019213768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.58, y: 0.08, z: -0.06340777}
+  m_LocalPosition: {x: 73.92, y: -0.23, z: -0.06340777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5243,7 +5271,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
+<<<<<<< HEAD
+  m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
   m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
