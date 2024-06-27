@@ -28,8 +28,6 @@ public class Shop_Interaction_Shop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
-            shopButton.SetActive(false);
-            potionPicture.SetActive(false);
             if (shopPanal.activeInHierarchy)
             {
 
@@ -40,6 +38,10 @@ public class Shop_Interaction_Shop : MonoBehaviour
                 shopPanal.SetActive(true);
                 StartCoroutine(Typing());
             }
+        }
+        if(!playerIsClose)
+        {
+            ExitShop();
         }
         
 
@@ -96,6 +98,9 @@ public class Shop_Interaction_Shop : MonoBehaviour
     
     public void ExitShop()
     {
+        zeroText();
+        shopButton.SetActive(false);
+        potionPicture.SetActive(false);
         shopPanal.SetActive(false);
     }
 
