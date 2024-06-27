@@ -326,7 +326,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 05dd504bab60f5b49a9d3de022e0e36a, type: 2}
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -942,7 +942,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1395,7 +1399,7 @@ Transform:
   m_Children:
   - {fileID: 1077796602}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 40.034, z: 0}
 --- !u!70 &752863810
 CapsuleCollider2D:
@@ -2207,7 +2211,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3091,7 +3099,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3406,7 +3418,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -3495,6 +3511,134 @@ MonoBehaviour:
   points:
   - {fileID: 428429110}
   - {fileID: 626430873}
+--- !u!1 &1602675459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1602675461}
+  - component: {fileID: 1602675460}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1602675460
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602675459}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1602675461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602675459}
+  m_LocalRotation: {x: -0, y: 0.34229904, z: -0, w: 0.9395911}
+  m_LocalPosition: {x: 105.9, y: -0.38, z: 0}
+  m_LocalScale: {x: 29.25, y: 29.25, z: 29.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636955618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,7 +3777,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4278,7 +4426,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4425,7 +4577,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4973,7 +5129,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
+<<<<<<< HEAD
   m_Material: {fileID: 6200000, guid: 7cfe1b39a73054a2193bb3f7c99e6ba9, type: 2}
+=======
+  m_Material: {fileID: 6200000, guid: 30a2e7985334633499130cb91754136b, type: 2}
+>>>>>>> e4ba83ac0c961ac0108cda3d7ff91dcf10cd0ded
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

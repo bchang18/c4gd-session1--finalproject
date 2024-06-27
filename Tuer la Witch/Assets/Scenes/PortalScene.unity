@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5c7a45566f57a45a55aeb657d68620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonPrefab: {fileID: 1440488250867678713, guid: 45be9afcb0d2cec49851621c9efc9136, type: 3}
+  skeletonPrefab: {fileID: 7558052827128421416, guid: 45be9afcb0d2cec49851621c9efc9136, type: 3}
   player: {fileID: 0}
   spawnRate: 12
   enemiesLeft: 10
@@ -2675,7 +2675,7 @@ GameObject:
   - component: {fileID: 836188184}
   - component: {fileID: 836188185}
   - component: {fileID: 836188186}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: DetectEnemy_Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,6 +15,7 @@ public class SkeletonScript : MonoBehaviour
     public bool attacked = false;
     public int enemyHealth = 2;
     public int difficulty = 1;
+    public GameObject food;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class SkeletonScript : MonoBehaviour
     public void destroyEnemy()
     {
         Destroy(gameObject);
+        dropLoot();
     }
     public void receiveDamage(){
         anim.SetBool("Damaged", true);
@@ -39,6 +41,13 @@ public class SkeletonScript : MonoBehaviour
                 anim.SetBool("isAlive", false);
                 SB.velocity = new Vector2(0, 0);
             }
+        }
+    }
+    public void dropLoot() {
+        float value = Random.Range(0f, 10f);
+        if (value >= 5)
+        {
+            Instantiate(food, transform.position, food.transform.rotation);
         }
     }
     public void shieldAndDamageFalse() {
@@ -91,6 +100,10 @@ public class SkeletonScript : MonoBehaviour
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         float xVelocity = moveDirection_x * SkeletonSpeed;
         float yVelocity = moveDirection_y * SkeletonSpeed;
+        FoodScript[] foodArray = FindObjectsOfType<FoodScript>();
+        foreach (FoodScript f in foodArray) {
+            Physics2D.IgnoreCollision(f.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
         /*if (!attacked)
         {
             if (playerDetection.triggered)
