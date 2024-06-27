@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Shop_Interaction_Shop : MonoBehaviour
 {
     public GameObject shopPanal;
-    //public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index;
+
+    public GameObject shopButton;
+    public GameObject potionPicture;
 
     //public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
 
+
+    void Start()
+    {
+        shopButton.SetActive(false);
+        potionPicture.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -21,27 +30,33 @@ public class Shop_Interaction_Shop : MonoBehaviour
         {
             if (shopPanal.activeInHierarchy)
             {
-                //zeroText();
+                zeroText();
             }
             else
             {
                 shopPanal.SetActive(true);
-                //StartCoroutine(Typing());
+                StartCoroutine(Typing());
             }
         }
 
-        /*if (dialogueText.text == dialogue[index])
+        if(dialogueText.text == dialogue[0])
         {
-            contButton.SetActive(true);
-        }*/
+            print("hi");
+            shopButton.SetActive(true);
+            potionPicture.SetActive(true);
+        }
+
+        
+
+
     }
 
 
-    /*public void zeroText()
+    public void zeroText()
     {
         dialogueText.text = "";
         index = 0;
-        shopPanal.SetActive(false);
+        //shopPanal.SetActive(false);
     }
 
 
@@ -60,7 +75,7 @@ public class Shop_Interaction_Shop : MonoBehaviour
 
     public void NextLine()
     {
-        contButton.SetActive(false);
+        //contButton.SetActive(false);
 
         if (index < dialogue.Length - 1)
         {
@@ -74,7 +89,7 @@ public class Shop_Interaction_Shop : MonoBehaviour
             zeroText();
         }
     }
-    */
+    
     public void ExitShop()
     {
         shopPanal.SetActive(false);
@@ -95,7 +110,7 @@ public class Shop_Interaction_Shop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            //zeroText();
+            zeroText();
         }
     }
 }
