@@ -18,7 +18,6 @@ public class SpawnMonsterScript : MonoBehaviour
     {
         while (player.gameContinues && enemiesLeft > 0)
         {
-            print("spawned!");
             --enemiesLeft;
             Instantiate(skeletonPrefab, new Vector2(transform.position.x, skeletonPrefab.transform.position.y), skeletonPrefab.transform.rotation);
             yield return new WaitForSeconds(spawnRate);

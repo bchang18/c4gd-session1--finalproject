@@ -13,7 +13,9 @@ public class PlayerController_Portal : MonoBehaviour
     public LayerMask groundMask;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI enemyText;
+    public TextMeshProUGUI coinText;
     public int health = 3;
+    public int coins = 0;
     public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -8.38f;
     public int jumps = 2;
     public int max_jumps = 2;
@@ -74,6 +76,7 @@ public class PlayerController_Portal : MonoBehaviour
         }
         healthText.text = "Health: " + health;
         enemyText.text = "Enemies Left: " + enemyCnt;
+        coinText.text = "Coins: " + coins;
         // Getting the inputs
         horizontalInput = Input.GetAxis("Horizontal");
         // initializing the speed for the next frame
