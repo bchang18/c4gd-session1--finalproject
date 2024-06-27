@@ -3270,8 +3270,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 139736576}
-        m_TargetAssemblyTypeName: PlayerController_Portal, Assembly-CSharp
+      - m_Target: {fileID: 32919259}
+        m_TargetAssemblyTypeName: SpawnMonsterScript, Assembly-CSharp
         m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:

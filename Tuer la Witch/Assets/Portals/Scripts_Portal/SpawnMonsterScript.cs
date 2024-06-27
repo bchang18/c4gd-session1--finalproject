@@ -15,6 +15,10 @@ public class SpawnMonsterScript : MonoBehaviour
         player = FindObjectOfType<PlayerController_Portal>();
         StartCoroutine(spawnMonsters());
     }
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     IEnumerator spawnMonsters()
     {
         while (player.gameContinues && enemiesLeft > 0)

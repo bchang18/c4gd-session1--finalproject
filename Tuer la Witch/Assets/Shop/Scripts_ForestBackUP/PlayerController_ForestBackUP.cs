@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using TMPro;
 public class PlayerController_ForestBackUP : MonoBehaviour
 {
     float horizontalInput;
@@ -10,6 +11,10 @@ public class PlayerController_ForestBackUP : MonoBehaviour
 
     Rigidbody2D rb2d; // ALLOWS US TO USE PHYSICS
     public float jumpSpeed = 5f;
+
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI DifficultyText;
 
     public Transform groundCheckPoint; // point to check ground from
     public LayerMask groundLayer; // we need check collision layer
@@ -44,6 +49,9 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     {
         // platformer can go left and right
         horizontalInput = Input.GetAxis("Horizontal");
+        healthText.text = "Health: " + PlayerPrefs.GetInt("Health");
+        coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins");
+        DifficultyText.text = "Difficulty: " + PlayerPrefs.GetInt("Difficulty");
         float nextVelocityX = horizontalInput * moveSpeed;
         if (horizontalInput < 0) //left -x
         {
