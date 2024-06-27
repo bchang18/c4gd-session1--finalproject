@@ -58,7 +58,6 @@ public class PlayerController_forest : MonoBehaviour
         {
             nextVelocityY = jumpSpeed;
             jumpsLeft -= 1; //decrement jump count  2 -> 1 -> 0
-            AudioManager_forest.singleton.PlaySFX(AudioManager_forest.singleton.jumpSFX, 1);
         }
 
         if (transform.position.y < gameOverHeight)
