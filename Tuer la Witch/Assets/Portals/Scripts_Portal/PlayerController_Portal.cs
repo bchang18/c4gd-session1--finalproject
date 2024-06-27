@@ -90,6 +90,7 @@ public class PlayerController_Portal : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && jumps > 0 && !inAttack) {
             ySpeed = jumpSpeed;
             --jumps;
+            AudioManager_Portal.singleton.PlaySFX(AudioManager_Portal.singleton.jumpSFX, 1); //Added By Daniel For Audio
         }
         // if player wanted to move right, adjust the facing of the sprite
         if (horizontalInput > 0 && !inAttack) {
@@ -106,6 +107,7 @@ public class PlayerController_Portal : MonoBehaviour
         {
             inAttack = true;
             inAttackMoveRight = (transform.localScale.x == 1);
+            AudioManager_Portal.singleton.PlaySFX(AudioManager_Portal.singleton.attackSFX, 1); //Added By Daniel For Audio
         }
         if (inAttack) {
             xSpeed = 0;

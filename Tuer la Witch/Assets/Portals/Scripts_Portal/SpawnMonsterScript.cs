@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnMonsterScript : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class SpawnMonsterScript : MonoBehaviour
             --enemiesLeft;
             Instantiate(skeletonPrefab, new Vector2(transform.position.x, skeletonPrefab.transform.position.y), skeletonPrefab.transform.rotation);
             yield return new WaitForSeconds(spawnRate);
+        }
+        if (enemiesLeft == 0)
+        {
+            SceneManager.LoadSceneAsync(3);
         }
     }
     // Update is called once per frame
