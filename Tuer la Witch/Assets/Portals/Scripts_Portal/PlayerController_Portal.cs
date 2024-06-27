@@ -47,10 +47,6 @@ public class PlayerController_Portal : MonoBehaviour
     public void dying() {
         anim.SetBool("isDying", true);
     }
-    public void restartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     public void destroyPlayer()
     {
         Destroy(gameObject);
@@ -72,6 +68,21 @@ public class PlayerController_Portal : MonoBehaviour
     void Update()
     {
         if (!anim.GetBool("isAlive")) {
+            return;
+        }
+        if (transform.position.y < -6) {
+            health = 0;
+            healthText.text = "Health: " + health;
+            gameContinues = false;
+            anim.SetBool("isAlive", false);
+            SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
+            foreach (SkeletonScript s in SSarray)
+            {
+                s.anim.SetBool("PlayerIsAlive", false);
+                s.SB.velocity = new Vector2(0, 0);
+            }
+            rb2d.velocity = new Vector2(0, 0);
+            destroyPlayer();
             return;
         }
         healthText.text = "Health: " + health;
