@@ -28,8 +28,11 @@ public class Shop_Interaction_Shop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
+            shopButton.SetActive(false);
+            potionPicture.SetActive(false);
             if (shopPanal.activeInHierarchy)
             {
+
                 zeroText();
             }
             else
@@ -38,8 +41,9 @@ public class Shop_Interaction_Shop : MonoBehaviour
                 StartCoroutine(Typing());
             }
         }
+        
 
-        if(dialogueText.text == dialogue[0])
+        if (dialogueText.text == dialogue[0])
         {
             print("hi");
             shopButton.SetActive(true);
