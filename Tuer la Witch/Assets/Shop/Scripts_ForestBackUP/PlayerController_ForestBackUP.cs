@@ -21,7 +21,9 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     float groundCheckRadius = .2f;
     public float maxJumps = 1; // how many total jumps the player can do
     float jumpsLeft = 0; // jumps left is a counter of the jumps a player has left
-
+    public float cur_health = 5;
+    public float cur_coins = 0;
+    public float cur_difficulty = 1;
 
     Animator anim;
 
@@ -49,9 +51,9 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     {
         // platformer can go left and right
         horizontalInput = Input.GetAxis("Horizontal");
-        healthText.text = "Health: " + PlayerPrefs.GetInt("Health");
+        /*healthText.text = "Health: " + PlayerPrefs.GetInt("Health");
         coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins");
-        DifficultyText.text = "Difficulty: " + PlayerPrefs.GetInt("Difficulty");
+        DifficultyText.text = "Difficulty: " + PlayerPrefs.GetInt("Difficulty");*/
         float nextVelocityX = horizontalInput * moveSpeed;
         if (horizontalInput < 0) //left -x
         {
