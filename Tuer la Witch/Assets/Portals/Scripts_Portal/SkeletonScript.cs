@@ -47,12 +47,12 @@ public class SkeletonScript : MonoBehaviour
     public void dropLoot() {
         float value_food= Random.Range(0f, 10f);
         float value_coin = Random.Range(0f, 10f);
-        if (value_food >= 5)
+        if (value_food >= 7.5)
         {
             Instantiate(food, transform.position, food.transform.rotation);
         }
-        if (value_coin >= 7) {
-            if (value_food >= 5) {
+        if (value_coin >= 5) {
+            if (value_food >= 7.5) {
                 Instantiate(coin, new Vector2(transform.position.x - 1, transform.position.y), coin.transform.rotation);
             }
             else {
