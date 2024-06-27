@@ -19,8 +19,6 @@ public class FoodScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7) {
-            print("triggered");
-            print(collision.gameObject.layer);
             player.health++;
             Destroy(gameObject);
         }
