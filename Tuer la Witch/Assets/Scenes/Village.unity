@@ -3658,15 +3658,14 @@ MonoBehaviour:
   dialogueText: {fileID: 2100700836}
   dialogue:
   - My dearest traveller, I trust that you are in the best of spirits today.
-  - I must say, the gentle rustle of the leaves and the sweet fragrance of roses
-    in the garden brings me immense joy.
+  - The sweet fragrance of roses in the garden brings me immense joy.
   - Pray, do join me for afternoon tea, where we shall delight in the warmth of conversation
     and indulge in the finest pastries.
   - The company of such esteemed individuals as yourselves is always a source of
     great pleasure.
   - I am most eager to partake in the delightful exchange of ideas and laughter.
   contButton: {fileID: 1305982119}
-  wordSpeed: 0.06
+  wordSpeed: 0
   playerIsClose: 0
 --- !u!1 &1439388498
 GameObject:
