@@ -23,9 +23,9 @@ public class PlayerController_Portal : MonoBehaviour
     public int cnt = 0;
     public bool inAttack = false;
     public bool inAttackMoveRight = false;
-    public SkeletonScript SS;
     public float attackConst = 2f / 60f;
     public Animator anim;
+    public Animator camera_anim;
     public PlayerDetectionScript enemyDetection;
     public bool gameContinues = true;
     public int enemyCnt;
@@ -38,7 +38,7 @@ public class PlayerController_Portal : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        SS = FindObjectOfType<SkeletonScript>();
+        camera_anim = Camera.main.GetComponent<Animator>();
         enemyDetection = FindObjectOfType<PlayerDetectionScript>();
         teleport = FindObjectOfType<Dialogue>(); 
         PlayerPrefs.SetInt("Health", Mathf.Max(PlayerPrefs.GetInt("Health"), 1));
@@ -66,6 +66,12 @@ public class PlayerController_Portal : MonoBehaviour
     public void attackFinish()
     {
         inAttack = false;
+    }
+    public void shakeCamera() {
+        camera_anim.SetBool("inAttack", true);
+    }
+    public void cameraUnshake() {
+        camera_anim.SetBool("inAttack", false);
     }
     public void goToShop() {
         SceneManager.LoadSceneAsync(3);
