@@ -14,9 +14,8 @@ public class PlayerController_Portal : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI enemyText;
     public TextMeshProUGUI coinText;
-    public TextMeshProUGUI difficultyText;
-    public int health;
-    public int coins;
+    public int health = 3;
+    public int coins = 0;
     public float horizontalInput, verticalInput, moveSpeed = 10f, jumpSpeed = 5f, groundCheckRadius = 0.1f, min_bound = -8.38f;
     public int jumps = 2;
     public int max_jumps = 2;
@@ -28,11 +27,8 @@ public class PlayerController_Portal : MonoBehaviour
     public Animator anim;
     public PlayerDetectionScript enemyDetection;
     public bool gameContinues = true;
-    public int enemyCnt;
+    public int enemyCnt = 10;
     public GameObject gameOverScreen;
-    public int default_health = 1;
-    public int cur_difficulty;
-    public Dialogue teleport;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,13 +36,6 @@ public class PlayerController_Portal : MonoBehaviour
         anim = GetComponent<Animator>();
         SS = FindObjectOfType<SkeletonScript>();
         enemyDetection = FindObjectOfType<PlayerDetectionScript>();
-        teleport = FindObjectOfType<Dialogue>(); 
-        PlayerPrefs.SetInt("Health", Mathf.Max(PlayerPrefs.GetInt("Health"), 1));
-        health = PlayerPrefs.GetInt("Health");
-        coins = PlayerPrefs.GetInt("Coins");
-        cur_difficulty = PlayerPrefs.GetInt("Difficulty");
-        enemyCnt = 10 + cur_difficulty - 1;
-        difficultyText.text = "Difficulty: " + cur_difficulty;
     }
     public bool ContactWithGround()
     {
@@ -67,21 +56,12 @@ public class PlayerController_Portal : MonoBehaviour
     {
         inAttack = false;
     }
-    public void goToShop() {
-        SceneManager.LoadSceneAsync(3);
-    }
     public void checkEnemy()
     {
-        SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
-        BoxCollider2D bx = enemyDetection.GetComponent<BoxCollider2D>();
-        float left_x_bound = bx.bounds.center.x - bx.bounds.extents.x;
-        float right_x_bound = bx.bounds.center.x + bx.bounds.extents.x;
-        foreach (SkeletonScript s in SSarray)
+        if (enemyDetection.triggered)
         {
-            if (s.transform.position.x >= left_x_bound && s.transform.position.x <= right_x_bound)
-            {
-                s.receiveDamage();
-            }
+            SS = FindObjectOfType<SkeletonScript>();
+            SS.receiveDamage();
         }
     }
     // Update is called once per frame
@@ -90,15 +70,11 @@ public class PlayerController_Portal : MonoBehaviour
         if (!anim.GetBool("isAlive")) {
             return;
         }
-        PlayerPrefs.SetInt("Health", health);
-        PlayerPrefs.SetInt("Coins", coins);
         if (transform.position.y < -6) {
             health = 0;
-            PlayerPrefs.SetInt("Health", default_health);
             healthText.text = "Health: " + health;
             gameContinues = false;
             anim.SetBool("isAlive", false);
-            PlayerPrefs.SetInt("Coins", coins + 10);
             SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
             foreach (SkeletonScript s in SSarray)
             {
@@ -112,11 +88,6 @@ public class PlayerController_Portal : MonoBehaviour
         healthText.text = "Health: " + health;
         enemyText.text = "Enemies Left: " + enemyCnt;
         coinText.text = "Coins: " + coins;
-        if (enemyCnt == 0)
-        {
-            teleport.isEnabled = true;
-            PlayerPrefs.SetInt("Difficulty", cur_difficulty + 1);
-        }
         // Getting the inputs
         horizontalInput = Input.GetAxis("Horizontal");
         // initializing the speed for the next frame

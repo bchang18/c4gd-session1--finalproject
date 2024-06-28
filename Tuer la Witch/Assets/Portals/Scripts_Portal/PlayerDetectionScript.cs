@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerDetectionScript : MonoBehaviour
 {
     public bool triggered = false;
-
     // Start is called before the first frame update
     void Start()
     {

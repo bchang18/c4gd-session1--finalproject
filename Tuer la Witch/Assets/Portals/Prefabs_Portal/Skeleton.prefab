@@ -175,7 +175,7 @@ MonoBehaviour:
   attacked: 0
   enemyHealth: 1
   difficulty: 5
-  food: {fileID: 2018709154561446937, guid: f6f4c9155a37fed42a7f76bef42974ea, type: 3}
+  food: {fileID: 7204885703197595560, guid: f6f4c9155a37fed42a7f76bef42974ea, type: 3}
   coin: {fileID: 4517151710751997119, guid: bd93b94398474424d99a86b8ad03f262, type: 3}
 --- !u!50 &8130496890841347612
 Rigidbody2D:

@@ -33,13 +33,7 @@ public class PlayerController_forest : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
     }
-    public void goToShop() {
-        SceneManager.LoadSceneAsync(3);
-    }
-    public void goToPortal()
-    {
-        SceneManager.LoadSceneAsync(4);
-    }
+
     // Update is called once per frame
     void Update()
     {

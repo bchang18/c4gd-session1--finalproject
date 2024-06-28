@@ -6,7 +6,6 @@ TagManager:
   tags:
   - ResetJump
   - spike
-  - Ground
   layers:
   - Default
   - TransparentFX
@@ -18,8 +17,8 @@ TagManager:
   - Player
   - Food
   - Coins
-  - Shop
-  - Portal
+  - 
+  - 
   - 
   - 
   - 
