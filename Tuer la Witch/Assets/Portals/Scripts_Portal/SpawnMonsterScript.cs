@@ -7,17 +7,19 @@ public class SpawnMonsterScript : MonoBehaviour
 {
     public GameObject skeletonPrefab;
     public PlayerController_Portal player;
-    public float spawnRate = 8f;
-    public int enemiesLeft = 10;
+    public float spawnRate = 10f;
+    public int enemiesLeft;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController_Portal>();
+        enemiesLeft = 10 + PlayerPrefs.GetInt("Difficulty") - 1;
+        spawnRate -= PlayerPrefs.GetInt("Difficulty") + 1;
         StartCoroutine(spawnMonsters());
     }
     public void restartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadSceneAsync(3);
     }
     IEnumerator spawnMonsters()
     {
@@ -26,10 +28,6 @@ public class SpawnMonsterScript : MonoBehaviour
             --enemiesLeft;
             Instantiate(skeletonPrefab, new Vector2(transform.position.x, skeletonPrefab.transform.position.y), skeletonPrefab.transform.rotation);
             yield return new WaitForSeconds(spawnRate);
-        }
-        if (enemiesLeft == 0)
-        {
-            SceneManager.LoadSceneAsync(3);
         }
     }
     // Update is called once per frame

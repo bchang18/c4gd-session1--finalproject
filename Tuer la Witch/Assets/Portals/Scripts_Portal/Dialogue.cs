@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
-public class EnterPortal_Forest : MonoBehaviour
+public class Dialogue : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public Text dialogueText;
@@ -14,15 +15,18 @@ public class EnterPortal_Forest : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool isEnabled = true;
     public bool isType = false;
 
     // Update is called once per frame
     void Update()
     {
+        if (!isEnabled) {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
-            if (dialogueText.text != "" && dialogueText.text != dialogue[index])
-            {
+            if (dialogueText.text != "" && dialogueText.text != dialogue[index]) {
                 dialogueText.text = dialogue[index];
                 StopCoroutine(Typing());
                 isType = false;
@@ -49,10 +53,11 @@ public class EnterPortal_Forest : MonoBehaviour
 
     public void zeroText()
     {
+        isType = false;
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
-        isType = false;
+
     }
 
 
@@ -62,8 +67,7 @@ public class EnterPortal_Forest : MonoBehaviour
     {
         foreach (char letter in dialogue[index].ToCharArray())
         {
-            if (!isType)
-            {
+            if (!isType) {
                 yield break;
             }
             dialogueText.text += letter;
@@ -75,9 +79,9 @@ public class EnterPortal_Forest : MonoBehaviour
 
     public void NextLine()
     {
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadSceneAsync(3);
 
-        
+
     }
 
 
@@ -86,7 +90,7 @@ public class EnterPortal_Forest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isEnabled)
         {
             playerIsClose = true;
         }
@@ -94,7 +98,7 @@ public class EnterPortal_Forest : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isEnabled)
         {
             playerIsClose = false;
             zeroText();
