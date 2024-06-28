@@ -44,7 +44,9 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
     }
-
+    public void goToForest() {
+        SceneManager.LoadSceneAsync(2);
+    }
     // Update is called once per frame
     void Update()
     {

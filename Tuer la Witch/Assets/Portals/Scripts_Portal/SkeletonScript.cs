@@ -13,8 +13,8 @@ public class SkeletonScript : MonoBehaviour
     public SkeletonDetectionScript playerDetection;
     public PlayerController_Portal playerController;
     public bool attacked = false;
-    public int enemyHealth = 2;
-    public int difficulty = 1;
+    public int enemyHealth;
+    public int difficulty;
     public GameObject food;
     public GameObject coin;
     // Start is called before the first frame update
@@ -26,6 +26,8 @@ public class SkeletonScript : MonoBehaviour
         anim = GetComponent<Animator>();
         playerDetection = FindObjectOfType<SkeletonDetectionScript>();
         StartCoroutine(shielding());
+        difficulty = PlayerPrefs.GetInt("Difficulty");
+        enemyHealth = 2 * difficulty;
     }
     public void destroyEnemy()
     {
@@ -38,9 +40,9 @@ public class SkeletonScript : MonoBehaviour
         {
             --enemyHealth;
             if (enemyHealth == 0) {
-                --playerController.enemyCnt;
                 anim.SetBool("isAlive", false);
                 SB.velocity = new Vector2(0, 0);
+                --playerController.enemyCnt;
             }
         }
     }
@@ -77,6 +79,7 @@ public class SkeletonScript : MonoBehaviour
             }
             if (playerController.health <= 0) {
                 playerController.gameContinues = false;
+                PlayerPrefs.SetInt("Health", 1);
                 playerController.anim.SetBool("isAlive", false);
                 playerController.anim.SetBool("isDying", true);
                 SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
@@ -94,7 +97,7 @@ public class SkeletonScript : MonoBehaviour
     {
         while (playerController.gameContinues)
         {
-            float nxtShield = Random.Range(0, difficulty);
+            float nxtShield = Random.Range(2f, 10f);
             yield return new WaitForSeconds(nxtShield);
             anim.SetBool("Shielded", true);
         }

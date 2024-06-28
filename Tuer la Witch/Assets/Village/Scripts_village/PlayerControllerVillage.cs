@@ -29,9 +29,18 @@ public class PlayerControllerVillage : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        PlayerPrefs.SetInt("Health", 5);
-        PlayerPrefs.SetInt("Coins", 15);
-        PlayerPrefs.SetInt("Difficulty", 1);
+        if (!PlayerPrefs.HasKey("Health"))
+        { 
+             PlayerPrefs.SetInt("Health", 1);
+        }
+        if (!PlayerPrefs.HasKey("Coins"))
+        {
+            PlayerPrefs.SetInt("Coins", 0);
+        }
+        if (!PlayerPrefs.HasKey("Difficulty"))
+        {
+            PlayerPrefs.SetInt("Difficulty", 1);
+        }
     }
 
     bool KeyQ()
