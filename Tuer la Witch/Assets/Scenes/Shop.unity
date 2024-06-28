@@ -6906,7 +6906,7 @@ GameObject:
   - component: {fileID: 94877472}
   - component: {fileID: 94877471}
   m_Layer: 5
-  m_Name: EnemiesLeft
+  m_Name: Difficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6929,7 +6929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -78}
+  m_AnchoredPosition: {x: 147.4, y: -78}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94877471
@@ -6952,7 +6952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enemies Left: 10'
+  m_text: 'Difficulty: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 761ba6e9215ed49ca8dd75804f800f08, type: 2}
   m_sharedMaterial: {fileID: -8525359160745854843, guid: 761ba6e9215ed49ca8dd75804f800f08, type: 2}
@@ -7064,7 +7064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.8, y: 3.6}
+  m_AnchoredPosition: {x: -72, y: 3.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130273801
@@ -8043,7 +8043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 507217003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1389592801}
+        m_TargetAssemblyTypeName: Shop_Interaction_Shop, Assembly-CSharp
+        m_MethodName: buyPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &507217003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8707,9 +8719,7 @@ GameObject:
   - component: {fileID: 693460977}
   - component: {fileID: 693460979}
   - component: {fileID: 693460981}
-  - component: {fileID: 693460980}
-  - component: {fileID: 693460982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8779,7 +8789,8 @@ Transform:
   m_LocalPosition: {x: -23.17, y: 1.68, z: -0.1}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1389592800}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8804,22 +8815,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &693460980
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693460976}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.83}
-  m_Size: {x: 1.9, y: 0.77}
-  m_Direction: 0
 --- !u!61 &693460981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8833,7 +8828,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.56}
+  m_Offset: {x: 0.11539507, y: -0.23286903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8844,28 +8839,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.87, y: 4.22}
+  m_Size: {x: 7.178259, y: 6.7971535}
   m_EdgeRadius: 0
---- !u!114 &693460982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693460976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be98fc61fb880df4bbc1e0445b647785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopPanal: {fileID: 622052247}
-  dialogueText: {fileID: 520642491}
-  dialogue:
-  - Welcome to the Shop!
-  shopButton: {fileID: 507217000}
-  potionPicture: {fileID: 616928188}
-  wordSpeed: 0.15
-  playerIsClose: 0
 --- !u!1 &702057275
 GameObject:
   m_ObjectHideFlags: 0
@@ -10105,6 +10080,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_ForestBackUp
       objectReference: {fileID: 0}
+    - target: {fileID: 5910266259513111527, guid: 8522715fc579849668a504d2957950f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910266259907219640, guid: 8522715fc579849668a504d2957950f8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5910266259907219643, guid: 8522715fc579849668a504d2957950f8, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.27
@@ -10342,6 +10325,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373779661}
   m_CullTransparentMesh: 1
+--- !u!1 &1389592799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389592800}
+  - component: {fileID: 1389592802}
+  - component: {fileID: 1389592801}
+  m_Layer: 0
+  m_Name: ShopDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389592800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389592799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: -3.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 693460978}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389592801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389592799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be98fc61fb880df4bbc1e0445b647785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 622052247}
+  dialogueText: {fileID: 520642491}
+  dialogue:
+  - Welcome to the Shop!
+  - You can buy potion to increase your health.
+  - Sorry! Not enough coins.
+  - Purchase Success!
+  shopButton: {fileID: 507217000}
+  potionPicture: {fileID: 616928188}
+  player: {fileID: 0}
+  wordSpeed: 0.15
+  playerIsClose: 0
+  isActive: 0
+--- !u!61 &1389592802
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389592799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.026776493, y: 0.84344256}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9278655, y: 2.2049174}
+  m_EdgeRadius: 0
 --- !u!1 &1519281161
 GameObject:
   m_ObjectHideFlags: 0
@@ -11272,7 +11339,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693460982}
+      - m_Target: {fileID: 1389592801}
         m_TargetAssemblyTypeName: Shop_Interaction_Shop, Assembly-CSharp
         m_MethodName: ExitShop
         m_Mode: 1
@@ -11478,17 +11545,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpSpeed: 5
-  healthText: {fileID: 0}
-  coinText: {fileID: 0}
-  DifficultyText: {fileID: 0}
+  healthText: {fileID: 130273801}
+  coinText: {fileID: 1094510438}
+  DifficultyText: {fileID: 94877471}
   groundCheckPoint: {fileID: 1356497927}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   maxJumps: 1
-  cur_health: 5
-  cur_coins: 0
-  cur_difficulty: 1
+  health: 0
+  coins: 0
+  difficulty: 0
   gameOverHeight: -4
 --- !u!70 &2058567047
 CapsuleCollider2D:
