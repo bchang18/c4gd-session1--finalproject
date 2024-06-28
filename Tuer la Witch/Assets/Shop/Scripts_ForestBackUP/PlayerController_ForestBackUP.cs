@@ -21,9 +21,8 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     float groundCheckRadius = .2f;
     public float maxJumps = 1; // how many total jumps the player can do
     float jumpsLeft = 0; // jumps left is a counter of the jumps a player has left
-    public float cur_health = 5;
-    public float cur_coins = 0;
-    public float cur_difficulty = 1;
+
+    public int health, coins, difficulty;
 
     Animator anim;
 
@@ -45,15 +44,20 @@ public class PlayerController_ForestBackUP : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
     }
-
+    public void goToForest() {
+        SceneManager.LoadSceneAsync(2);
+    }
     // Update is called once per frame
     void Update()
     {
         // platformer can go left and right
         horizontalInput = Input.GetAxis("Horizontal");
-        /*healthText.text = "Health: " + PlayerPrefs.GetInt("Health");
-        coinText.text = "Coins: " + PlayerPrefs.GetInt("Coins");
-        DifficultyText.text = "Difficulty: " + PlayerPrefs.GetInt("Difficulty");*/
+        health = PlayerPrefs.GetInt("Health");
+        coins = PlayerPrefs.GetInt("Coins");
+        difficulty = PlayerPrefs.GetInt("Difficulty");
+        healthText.text = "Health: " + health;
+        coinText.text = "Coins: " + coins;
+        DifficultyText.text = "Difficulty: " + difficulty;
         float nextVelocityX = horizontalInput * moveSpeed;
         if (horizontalInput < 0) //left -x
         {
