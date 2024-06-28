@@ -10616,7 +10616,7 @@ MonoBehaviour:
   shopButton: {fileID: 507217000}
   potionPicture: {fileID: 616928188}
   player: {fileID: 0}
-  wordSpeed: 0.15
+  wordSpeed: 0.06
   playerIsClose: 0
   isActive: 0
 --- !u!61 &1389592802

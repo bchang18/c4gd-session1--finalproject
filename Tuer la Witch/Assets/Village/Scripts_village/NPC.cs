@@ -13,21 +13,31 @@ public class NPC : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool isType = false;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
-            if (dialoguePanel.activeInHierarchy)
+            if (dialogueText.text != "" && dialogueText.text != dialogue[index])
             {
-                zeroText();
+                dialogueText.text = dialogue[index];
+                StopCoroutine(Typing());
+                isType = false;
             }
-            else
-            {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
+            else { 
+                if (dialoguePanel.activeInHierarchy)
+                {
+                    zeroText();
+                }
+                else
+                {
+                    isType = true;
+                    dialoguePanel.SetActive(true);
+                    StartCoroutine(Typing());
+                }
+            } 
         }
 
         if(dialogueText.text == dialogue[index])
@@ -39,6 +49,7 @@ public class NPC : MonoBehaviour
 
     public void zeroText()
     {
+        isType = false;
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
@@ -51,6 +62,9 @@ public class NPC : MonoBehaviour
     {
         foreach(char letter in dialogue[index].ToCharArray())
         {
+            if (!isType) {
+                yield break;
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
@@ -66,8 +80,8 @@ public class NPC : MonoBehaviour
         {
             index++;
             dialogueText.text = "";
+            isType = true;
             StartCoroutine(Typing());
-
         }
         else
         {

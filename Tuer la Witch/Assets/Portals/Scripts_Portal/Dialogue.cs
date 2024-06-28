@@ -26,21 +26,25 @@ public class Dialogue : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
-            if (dialogueText.text != "" && dialogueText.text != dialogue[index]) {
+            if (dialogueText.text != "" && dialogueText.text != dialogue[index])
+            {
                 dialogueText.text = dialogue[index];
                 StopCoroutine(Typing());
                 isType = false;
             }
-            if (dialoguePanel.activeInHierarchy)
-            {
-                zeroText();
+            else { 
+                if (dialoguePanel.activeInHierarchy)
+                {
+                    zeroText();
+                }
+                else
+                {
+                    isType = true;
+                    dialoguePanel.SetActive(true);
+                    StartCoroutine(Typing());
+                }
             }
-            else
-            {
-                isType = true;
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
+            
         }
 
         if (dialogueText.text == dialogue[index])

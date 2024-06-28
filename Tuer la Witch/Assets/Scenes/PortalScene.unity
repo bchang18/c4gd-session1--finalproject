@@ -3115,7 +3115,7 @@ MonoBehaviour:
   dialogue:
   - 'You have defeated all enemies on this difficulty. Return? '
   contButton: {fileID: 258360595}
-  wordSpeed: 0
+  wordSpeed: 0.06
   playerIsClose: 0
   isEnabled: 0
   isType: 0

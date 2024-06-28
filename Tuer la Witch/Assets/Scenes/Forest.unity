@@ -4933,8 +4933,9 @@ MonoBehaviour:
   - Would you like to enter the portal?
   - (Walk Away If No)
   contButton: {fileID: 347937184}
-  wordSpeed: 0
+  wordSpeed: 0.06
   playerIsClose: 0
+  isType: 0
 --- !u!70 &1883783810
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
