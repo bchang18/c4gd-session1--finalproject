@@ -27,7 +27,7 @@ public class SkeletonScript : MonoBehaviour
         playerDetection = FindObjectOfType<SkeletonDetectionScript>();
         StartCoroutine(shielding());
         difficulty = PlayerPrefs.GetInt("Difficulty");
-        enemyHealth = 2 * difficulty;
+        enemyHealth = difficulty;
     }
     public void destroyEnemy()
     {
@@ -80,6 +80,7 @@ public class SkeletonScript : MonoBehaviour
             if (playerController.health <= 0) {
                 playerController.gameContinues = false;
                 PlayerPrefs.SetInt("Health", 1);
+                PlayerPrefs.SetInt("Coins", playerController.coins + 10);
                 playerController.anim.SetBool("isAlive", false);
                 playerController.anim.SetBool("isDying", true);
                 SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();

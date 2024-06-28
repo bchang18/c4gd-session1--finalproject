@@ -14,18 +14,26 @@ public class EnterPortal_Forest : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool isType = false;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
+            if (dialogueText.text != "" && dialogueText.text != dialogue[index])
+            {
+                dialogueText.text = dialogue[index];
+                StopCoroutine(Typing());
+                isType = false;
+            }
             if (dialoguePanel.activeInHierarchy)
             {
                 zeroText();
             }
             else
             {
+                isType = true;
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
@@ -44,7 +52,7 @@ public class EnterPortal_Forest : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
-        
+        isType = false;
     }
 
 
@@ -54,6 +62,10 @@ public class EnterPortal_Forest : MonoBehaviour
     {
         foreach (char letter in dialogue[index].ToCharArray())
         {
+            if (!isType)
+            {
+                yield break;
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
