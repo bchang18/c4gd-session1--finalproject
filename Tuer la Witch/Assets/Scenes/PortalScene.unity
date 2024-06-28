@@ -3118,6 +3118,7 @@ MonoBehaviour:
   wordSpeed: 0
   playerIsClose: 0
   isEnabled: 0
+  isType: 0
 --- !u!1 &753695528
 GameObject:
   m_ObjectHideFlags: 0

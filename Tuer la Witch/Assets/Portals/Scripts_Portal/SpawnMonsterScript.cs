@@ -13,7 +13,7 @@ public class SpawnMonsterScript : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController_Portal>();
-        enemiesLeft = 10 + 2* (PlayerPrefs.GetInt("Difficulty") - 1);
+        enemiesLeft = 10 + PlayerPrefs.GetInt("Difficulty") - 1;
         spawnRate -= PlayerPrefs.GetInt("Difficulty") + 1;
         StartCoroutine(spawnMonsters());
     }

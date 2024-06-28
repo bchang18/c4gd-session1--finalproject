@@ -45,7 +45,7 @@ public class PlayerController_Portal : MonoBehaviour
         health = PlayerPrefs.GetInt("Health");
         coins = PlayerPrefs.GetInt("Coins");
         cur_difficulty = PlayerPrefs.GetInt("Difficulty");
-        enemyCnt = 10 + 2 * (cur_difficulty - 1);
+        enemyCnt = 10 + cur_difficulty - 1;
         difficultyText.text = "Difficulty: " + cur_difficulty;
     }
     public bool ContactWithGround()
@@ -98,6 +98,7 @@ public class PlayerController_Portal : MonoBehaviour
             healthText.text = "Health: " + health;
             gameContinues = false;
             anim.SetBool("isAlive", false);
+            PlayerPrefs.SetInt("Coins", coins + 10);
             SkeletonScript[] SSarray = FindObjectsOfType<SkeletonScript>();
             foreach (SkeletonScript s in SSarray)
             {

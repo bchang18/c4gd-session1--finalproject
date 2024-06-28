@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Dialogue : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class Dialogue : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
-    public bool isEnabled = false;
+    public bool isEnabled = true;
+    public bool isType = false;
 
     // Update is called once per frame
     void Update()
@@ -24,12 +26,18 @@ public class Dialogue : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && playerIsClose)
         {
+            if (dialogueText.text != "" && dialogueText.text != dialogue[index]) {
+                dialogueText.text = dialogue[index];
+                StopCoroutine(Typing());
+                isType = false;
+            }
             if (dialoguePanel.activeInHierarchy)
             {
                 zeroText();
             }
             else
             {
+                isType = true;
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
@@ -45,6 +53,7 @@ public class Dialogue : MonoBehaviour
 
     public void zeroText()
     {
+        isType = false;
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
@@ -58,6 +67,9 @@ public class Dialogue : MonoBehaviour
     {
         foreach (char letter in dialogue[index].ToCharArray())
         {
+            if (!isType) {
+                yield break;
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
