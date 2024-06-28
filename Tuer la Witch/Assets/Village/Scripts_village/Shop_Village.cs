@@ -9,4 +9,7 @@ public class Shop_Village : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(3);
     }
+    public void MoveToBattle() {
+        SceneManager.LoadSceneAsync(4);
+    }
 }

@@ -38,6 +38,10 @@ public class PlayerController_forest : MonoBehaviour
     }
     public void goToPortal()
     {
+        int healthBefore = PlayerPrefs.GetInt("Health");
+        int coinsBefore = PlayerPrefs.GetInt("Coins");
+        PlayerPrefs.SetInt("Health", healthBefore * 5);
+        PlayerPrefs.SetInt("Coins", coinsBefore * 5);
         SceneManager.LoadSceneAsync(4);
     }
     // Update is called once per frame

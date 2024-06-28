@@ -9,4 +9,8 @@ public class Villlage_Shop : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+    public void MoveToBattle()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
 }

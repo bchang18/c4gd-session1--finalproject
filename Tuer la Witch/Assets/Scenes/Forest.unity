@@ -5262,6 +5262,7 @@ MonoBehaviour:
   textComponent: {fileID: 1593141178}
   lines:
   - 'Welcome to the Forest!         '
+  - If you want to double your Health and Coins,
   - 'Make your way to the Portal    '
   textSpeed: 0.1
 --- !u!114 &2109539652
